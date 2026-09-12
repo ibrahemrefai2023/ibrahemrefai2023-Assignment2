@@ -45,7 +45,7 @@
                         Console.WriteLine($"Result: {Multiply(firstNumber, secondNumber)}");
                         break;
                     case "/":
-                        if (secondNumber == 0)
+                        if (secondNumber == 0)//fix: handle division by zero 
                         {
                             Console.WriteLine("Cannot divide by zero.");
                             return;
