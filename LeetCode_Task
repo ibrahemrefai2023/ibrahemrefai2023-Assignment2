@@ -1,0 +1,40 @@
+
+Reverse String
+
+function that reverses a string The input string is given as an array of characters s
+You must do this by modifying the input array in-place with O(1) extra memory.
+
+public class Solution {
+        public  void ReverseString(char[] s)
+        {
+            if (s == null || s.Length <= 1)
+                return;
+            var j = 0;
+            for (int i = s.Length -1; i >= 0; i--)
+            {
+                if (j >= i) break;
+                var emptyChar = s[j];
+                s[j] = s[i];
+                s[i] = emptyChar;
+                j++;
+            }
+        }
+}
+
+Solution Idea
+
+نستخدم Two Pointers:
+
+-j يبدأ من أول array
+-i يبدأ من آخر array
+-في كل خطوة نعمل swap بين s[j] و s[i]
+نزود j ونقلل i لحد ما المؤشرين يقابلوا بعض
+
+⏱️ Time Complexity
+
+O(n) — عشان فيه loop واحد بيعدي على كل عناصر  array مرة واحدة
+
+💾 Space Complexity
+
+O(1) — عشان احنا بنعمل التعديل في نفس ال array ومش بنستخدم أي مساحة إضافية
+
